@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>VLESS Bridge</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="dot" id="statusDot"></span>
+      <h1>VLESS Bridge</h1>
+    </div>
+    <span class="status-label" id="statusLabel">выключено</span>
+  </header>
+
+  <div id="appView">
+  <section class="add">
+    <input id="linkInput" type="text" spellcheck="false"
+           placeholder="Ссылка-подписка или vless://" />
+    <button id="addBtn" title="Добавить">+</button>
+  </section>
+  <p class="hint" id="addHint"></p>
+
+  <section class="sub" id="subBar" hidden>
+    <div class="sub-info">
+      <span class="sub-label">Подписка</span>
+      <span class="sub-url" id="subUrl"></span>
+    </div>
+    <button id="refreshBtn" class="ghost small" title="Обновить список серверов">&#8635;</button>
+  </section>
+
+  <div class="list-head" id="listHead" hidden>
+    <span class="list-title">Серверы</span>
+    <button id="pingAllBtn" class="ghost small" title="Измерить задержку всех серверов">Пинг всех</button>
+  </div>
+
+  <section class="servers" id="serverList"></section>
+
+  <footer class="foot">
+    <button id="toggleBtn" class="toggle" disabled>Подключить</button>
+    <button id="ipBtn" class="ghost" title="Проверить текущий IP браузера">IP?</button>
+  </footer>
+  <p class="hint" id="ipResult"></p>
+  <p class="hint error" id="errorLine"></p>
+  </div><!-- /appView -->
+
+  <section id="onboard" hidden>
+    <h2 class="ob-title">Нужно установить приложение</h2>
+    <p class="ob-text">
+      Chrome сам не умеет подключаться к VLESS-серверам. Небольшое приложение-помощник
+      делает эту работу: расширение отдаёт ему команды, а оно поднимает туннель.
+      Ставится один раз.
+    </p>
+    <a id="obDownload" class="ob-download" href="#" target="_blank" rel="noopener noreferrer">Скачать</a>
+    <ol class="ob-steps">
+      <li>Скачайте и распакуйте архив.</li>
+      <li id="obStepInstall">Запустите скрипт установки из папки.</li>
+      <li class="ob-restart" id="obStepRestart">
+        <b>Перезапустите Chrome полностью</b> — иначе helper не подхватится.
+      </li>
+    </ol>
+    <button id="obRecheck" class="toggle">Проверить снова</button>
+    <p class="hint" id="obHint"></p>
+  </section>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

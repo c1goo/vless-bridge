@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "VLESS Bridge",
+  "version": "0.4.0",
+  "description": "VLESS-прокси только для браузера. Вставьте ссылку-подписку или vless:// — IP меняется в Chrome, система остаётся нетронутой.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "proxy",
+    "storage",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

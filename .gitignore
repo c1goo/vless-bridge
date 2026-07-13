@@ -1,0 +1,34 @@
+# ============================================================
+# VLESS Bridge — .gitignore
+# Бинарники и рантайм-файлы в git не храним: они берутся из
+# Releases (helper/xray/geo) или генерируются на лету (конфиги).
+# ============================================================
+
+# --- собранные / скачанные бинарники ---
+# Пути анкорены, чтобы НЕ задеть исходную папку helper/ с *.go
+helper/install/helper
+helper/install/helper.exe
+helper/install/xray
+helper/install/xray.exe
+
+# geo-базы xray (качаются из релиза xray-core, ~30 МБ каждая)
+*.dat
+
+# --- рантайм-конфиги xray (генерирует helper; содержат UUID/ключи) ---
+active-config.json
+latency-*.json
+*-config.json
+sub.json
+*sub*.json
+
+# --- macOS / временное / редакторское ---
+.DS_Store
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# --- бэкапы / рабочие каталоги ---
+backup-*/
+scratchpad/
