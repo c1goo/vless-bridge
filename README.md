@@ -102,8 +102,8 @@ powershell -ExecutionPolicy Bypass -File install-windows.ps1 -ExtensionId <ID_р
 
 - [ ] Пинг и автовыбор быстрейшего сервера
 - [x] Подписки (subscription URL): и full-config JSON, и списки ссылок
-- [ ] Поддержка `vmess://` / `trojan://` / `ss://` ссылок (в full-config они уже работают)
+- [x] Поддержка `vmess://` / `trojan://` / `ss://` ссылок (в full-config они уже работают)
 - [ ] Автообновление подписки по расписанию (chrome.alarms)
 - [ ] WebRTC-защита
-- [ ] Установщики в один клик (.pkg / .msi)
-- [ ] Публикация в Chrome Web Store
+- [x] Установщики в один клик (.pkg / .msi)
+- [x] Публикация в Chrome Web Store
